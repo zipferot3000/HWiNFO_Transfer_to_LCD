@@ -1,0 +1,126 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="HWiNFO_Transfer_to_LCD.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="HWiNFO_PROCCESS_NAME" Type="System.String" Scope="User">
+      <Value Profile="(Default)">HWiNFO64</Value>
+    </Setting>
+    <Setting Name="SysLogSourceName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">HWiNFOTransferToLCD</Value>
+    </Setting>
+    <Setting Name="SysLogName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">HWiNFO Transfer</Value>
+    </Setting>
+    <Setting Name="SerialPortName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">COM5</Value>
+    </Setting>
+    <Setting Name="SerialPortSpeed" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">9600</Value>
+    </Setting>
+    <Setting Name="CPUPackageTempID" Type="System.UInt32" Scope="User">
+      <Value Profile="(Default)">16777470</Value>
+    </Setting>
+    <Setting Name="CPUPackageTempIndex" Type="System.UInt32" Scope="User">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
+    <Setting Name="TotalCPUUsageID" Type="System.UInt32" Scope="User">
+      <Value Profile="(Default)">117440529</Value>
+    </Setting>
+    <Setting Name="TotalCPUUsageIndex" Type="System.UInt32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="CPUPackagePowerID" Type="System.UInt32" Scope="User">
+      <Value Profile="(Default)">83886080</Value>
+    </Setting>
+    <Setting Name="CPUPackagePowerIndex" Type="System.UInt32" Scope="User">
+      <Value Profile="(Default)">3</Value>
+    </Setting>
+    <Setting Name="CPUFanID" Type="System.UInt32" Scope="User">
+      <Value Profile="(Default)">50331651</Value>
+    </Setting>
+    <Setting Name="CPUFanIndex" Type="System.UInt32" Scope="User">
+      <Value Profile="(Default)">19</Value>
+    </Setting>
+    <Setting Name="GPUIndex" Type="System.UInt32" Scope="User">
+      <Value Profile="(Default)">20</Value>
+    </Setting>
+    <Setting Name="GPUTempID" Type="System.UInt32" Scope="User">
+      <Value Profile="(Default)">16777216</Value>
+    </Setting>
+    <Setting Name="GPUCoreLoadID" Type="System.UInt32" Scope="User">
+      <Value Profile="(Default)">117440512</Value>
+    </Setting>
+    <Setting Name="GPUMemoryUsageID" Type="System.UInt32" Scope="User">
+      <Value Profile="(Default)">117440520</Value>
+    </Setting>
+    <Setting Name="GPUPowerID" Type="System.UInt32" Scope="User">
+      <Value Profile="(Default)">83886080</Value>
+    </Setting>
+    <Setting Name="GPUFanID" Type="System.UInt32" Scope="User">
+      <Value Profile="(Default)">50331648</Value>
+    </Setting>
+    <Setting Name="MemoryUsageID" Type="System.UInt32" Scope="User">
+      <Value Profile="(Default)">134217733</Value>
+    </Setting>
+    <Setting Name="MemoryUsageIndex" Type="System.UInt32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="DIMM_0_TemperatureID" Type="System.UInt32" Scope="User">
+      <Value Profile="(Default)">16777216</Value>
+    </Setting>
+    <Setting Name="DIMM_0_TemperatureIndex" Type="System.UInt32" Scope="User">
+      <Value Profile="(Default)">12</Value>
+    </Setting>
+    <Setting Name="DIMM_2_TemperatureID" Type="System.UInt32" Scope="User">
+      <Value Profile="(Default)">16777218</Value>
+    </Setting>
+    <Setting Name="DIMM_2_TemperatureIndex" Type="System.UInt32" Scope="User">
+      <Value Profile="(Default)">12</Value>
+    </Setting>
+    <Setting Name="PSUPowerEfficiencyID" Type="System.UInt32" Scope="User">
+      <Value Profile="(Default)">134217728</Value>
+    </Setting>
+    <Setting Name="PSUPowerEfficiencyIndex" Type="System.UInt32" Scope="User">
+      <Value Profile="(Default)">21</Value>
+    </Setting>
+    <Setting Name="PSUPowerID" Type="System.UInt32" Scope="User">
+      <Value Profile="(Default)">83886090</Value>
+    </Setting>
+    <Setting Name="PSUPowerIndex" Type="System.UInt32" Scope="User">
+      <Value Profile="(Default)">21</Value>
+    </Setting>
+    <Setting Name="PSUTemperatureID" Type="System.UInt32" Scope="User">
+      <Value Profile="(Default)">16777216</Value>
+    </Setting>
+    <Setting Name="PSUTemperatureIndex" Type="System.UInt32" Scope="User">
+      <Value Profile="(Default)">21</Value>
+    </Setting>
+    <Setting Name="DiskTempID" Type="System.UInt32" Scope="User">
+      <Value Profile="(Default)">16777216</Value>
+    </Setting>
+    <Setting Name="Disk1TempIndex" Type="System.UInt32" Scope="User">
+      <Value Profile="(Default)">14</Value>
+    </Setting>
+    <Setting Name="Disk2TempIndex" Type="System.UInt32" Scope="User">
+      <Value Profile="(Default)">13</Value>
+    </Setting>
+    <Setting Name="Disk3TempIndex" Type="System.UInt32" Scope="User">
+      <Value Profile="(Default)">15</Value>
+    </Setting>
+    <Setting Name="DiskReadID" Type="System.UInt32" Scope="User">
+      <Value Profile="(Default)">134217728</Value>
+    </Setting>
+    <Setting Name="DiskWriteID" Type="System.UInt32" Scope="User">
+      <Value Profile="(Default)">134217729</Value>
+    </Setting>
+    <Setting Name="Disk1SpeedID" Type="System.UInt32" Scope="User">
+      <Value Profile="(Default)">17</Value>
+    </Setting>
+    <Setting Name="Disk2SpeedID" Type="System.UInt32" Scope="User">
+      <Value Profile="(Default)">16</Value>
+    </Setting>
+    <Setting Name="Disk3SpeedID" Type="System.UInt32" Scope="User">
+      <Value Profile="(Default)">18</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

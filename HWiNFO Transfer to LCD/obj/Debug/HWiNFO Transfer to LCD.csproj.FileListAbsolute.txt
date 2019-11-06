@@ -1,0 +1,14 @@
+C:\Users\zipfe\source\repos\HWiNFO Transfer to LCD\HWiNFO Transfer to LCD\bin\Debug\HWiNFO Transfer to LCD.exe.config
+C:\Users\zipfe\source\repos\HWiNFO Transfer to LCD\HWiNFO Transfer to LCD\bin\Debug\HWiNFO Transfer to LCD.exe
+C:\Users\zipfe\source\repos\HWiNFO Transfer to LCD\HWiNFO Transfer to LCD\bin\Debug\HWiNFO Transfer to LCD.pdb
+C:\Users\zipfe\source\repos\HWiNFO Transfer to LCD\HWiNFO Transfer to LCD\obj\Debug\HWiNFO Transfer to LCD.csprojAssemblyReference.cache
+C:\Users\zipfe\source\repos\HWiNFO Transfer to LCD\HWiNFO Transfer to LCD\obj\Debug\HWiNFO Transfer to LCD.exe
+C:\Users\zipfe\source\repos\HWiNFO Transfer to LCD\HWiNFO Transfer to LCD\obj\Debug\HWiNFO Transfer to LCD.pdb
+F:\DEVELOP\C#\HWiNFO Transfer to LCD\HWiNFO Transfer to LCD\bin\Debug\HWiNFO Transfer to LCD.exe.config
+F:\DEVELOP\C#\HWiNFO Transfer to LCD\HWiNFO Transfer to LCD\bin\Debug\HWiNFO Transfer to LCD.exe
+F:\DEVELOP\C#\HWiNFO Transfer to LCD\HWiNFO Transfer to LCD\bin\Debug\HWiNFO Transfer to LCD.pdb
+F:\DEVELOP\C#\HWiNFO Transfer to LCD\HWiNFO Transfer to LCD\obj\Debug\HWiNFO_Transfer_to_LCD.ProjectInstaller.resources
+F:\DEVELOP\C#\HWiNFO Transfer to LCD\HWiNFO Transfer to LCD\obj\Debug\HWiNFO Transfer to LCD.csproj.GenerateResource.cache
+F:\DEVELOP\C#\HWiNFO Transfer to LCD\HWiNFO Transfer to LCD\obj\Debug\HWiNFO Transfer to LCD.exe
+F:\DEVELOP\C#\HWiNFO Transfer to LCD\HWiNFO Transfer to LCD\obj\Debug\HWiNFO Transfer to LCD.pdb
+F:\DEVELOP\C#\HWiNFO Transfer to LCD\HWiNFO Transfer to LCD\obj\Debug\HWiNFO Transfer to LCD.csprojAssemblyReference.cache
