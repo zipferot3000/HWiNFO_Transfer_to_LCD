@@ -202,6 +202,7 @@ namespace HWiNFO_Transfer_to_LCD
             catch (Exception ex)
             {
                 port_opened = false;
+                try { serialPort.Close(); } catch { }
                 eventLog.WriteEntry("Cant open serial port: " + ex.Message, EventLogEntryType.Error);
             }
         }
@@ -223,6 +224,7 @@ namespace HWiNFO_Transfer_to_LCD
                         catch (Exception ex)
                         {
                             eventLog.WriteEntry("Sending data to serial fail: " + ex.Message, EventLogEntryType.Error);
+                            port_opened = false;
                         }
                     }
                 }
