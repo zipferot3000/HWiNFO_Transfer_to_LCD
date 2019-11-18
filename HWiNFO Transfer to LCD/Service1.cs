@@ -110,7 +110,10 @@ namespace HWiNFO_Transfer_to_LCD
                 values_to_send = new List<string>();
 
                 //set time
-                values_to_send.Add(((Int32)(DateTime.Now.Subtract(new DateTime(1970, 1, 1))).TotalSeconds).ToString());
+                values_to_send.Add(DateTime.Now.ToString("HH:mm"));
+
+                //set date
+                values_to_send.Add(DateTime.Now.ToString("dd.MM.yy"));
 
                 //CPU Package temp
                 values_to_send.Add(((int)((data_arr.Find(d => d.dwReadingID == settings.CPUPackageTempID && d.dwSensorIndex == settings.CPUPackageTempIndex)).Value)).ToString());
