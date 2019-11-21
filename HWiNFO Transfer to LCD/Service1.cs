@@ -106,7 +106,9 @@ namespace HWiNFO_Transfer_to_LCD
         {
             try
             {
-                string resolve = "";
+                string resolve = "", tmp_str = "";
+                int tmp = 0;
+                double tmp2 = 0, tmp3 = 0;
                 values_to_send = new List<string>();
 
                 //set time
@@ -119,13 +121,16 @@ namespace HWiNFO_Transfer_to_LCD
                 values_to_send.Add(((int)((data_arr.Find(d => d.dwReadingID == settings.CPUPackageTempID && d.dwSensorIndex == settings.CPUPackageTempIndex)).Value)).ToString());
 
                 //Total CPU Usage
-                values_to_send.Add(((int)((data_arr.Find(d => d.dwReadingID == settings.TotalCPUUsageID && d.dwSensorIndex == settings.TotalCPUUsageIndex)).Value)).ToString());
+                tmp = (int)((data_arr.Find(d => d.dwReadingID == settings.TotalCPUUsageID && d.dwSensorIndex == settings.TotalCPUUsageIndex)).Value);
+                values_to_send.Add(getStr(tmp, "%"));
 
                 //CPU Package Power
-                values_to_send.Add(((int)((data_arr.Find(d => d.dwReadingID == settings.CPUPackagePowerID && d.dwSensorIndex == settings.CPUPackagePowerIndex)).Value)).ToString());
-                
+                tmp = (int)((data_arr.Find(d => d.dwReadingID == settings.CPUPackagePowerID && d.dwSensorIndex == settings.CPUPackagePowerIndex)).Value);
+                values_to_send.Add(getStr(tmp, "W"));
+
                 //Fan3
-                values_to_send.Add(((int)((data_arr.Find(d => d.dwReadingID == settings.CPUFanID && d.dwSensorIndex == settings.CPUFanIndex)).Value)).ToString());
+                tmp = (int)((data_arr.Find(d => d.dwReadingID == settings.CPUFanID && d.dwSensorIndex == settings.CPUFanIndex)).Value);
+                values_to_send.Add(getRPM(tmp));
 
 
 
@@ -134,22 +139,29 @@ namespace HWiNFO_Transfer_to_LCD
                 values_to_send.Add(((int)((data_arr.Find(d => d.dwReadingID == settings.GPUTempID && d.dwSensorIndex == settings.GPUIndex)).Value)).ToString());
 
                 //GPU Core Load
-                values_to_send.Add(((int)((data_arr.Find(d => d.dwReadingID == settings.GPUCoreLoadID && d.dwSensorIndex == settings.GPUIndex)).Value)).ToString());
+                tmp = (int)((data_arr.Find(d => d.dwReadingID == settings.GPUCoreLoadID && d.dwSensorIndex == settings.GPUIndex)).Value);
+                tmp_str = getStr(tmp, "%");
+                values_to_send.Add(tmp_str == "100%" ? "100" : tmp_str.Substring(0,3));
 
                 //GPU Memory Usage
-                values_to_send.Add(((int)((data_arr.Find(d => d.dwReadingID == settings.GPUMemoryUsageID && d.dwSensorIndex == settings.GPUIndex)).Value)).ToString());
+                tmp = (int)((data_arr.Find(d => d.dwReadingID == settings.GPUMemoryUsageID && d.dwSensorIndex == settings.GPUIndex)).Value);
+                tmp_str = getStr(tmp, "%");
+                values_to_send.Add(tmp_str == "100%" ? "100" : tmp_str.Substring(0, 3));
 
                 //GPU Power
-                values_to_send.Add(((int)((data_arr.Find(d => d.dwReadingID == settings.GPUPowerID && d.dwSensorIndex == settings.GPUIndex)).Value)).ToString());
+                tmp = (int)((data_arr.Find(d => d.dwReadingID == settings.GPUPowerID && d.dwSensorIndex == settings.GPUIndex)).Value);
+                values_to_send.Add(getStr(tmp, "W"));
 
                 //GPU Fan1
-                values_to_send.Add(((int)((data_arr.Find(d => d.dwReadingID == settings.GPUFanID && d.dwSensorIndex == settings.GPUIndex)).Value)).ToString());
+                tmp = (int)((data_arr.Find(d => d.dwReadingID == settings.GPUFanID && d.dwSensorIndex == settings.GPUIndex)).Value);
+                values_to_send.Add(getRPM(tmp));
 
 
 
 
                 //Memory Usage
-                values_to_send.Add(((int)((data_arr.Find(d => d.dwReadingID == settings.MemoryUsageID && d.dwSensorIndex == settings.MemoryUsageIndex)).Value)).ToString());
+                tmp = (int)((data_arr.Find(d => d.dwReadingID == settings.MemoryUsageID && d.dwSensorIndex == settings.MemoryUsageIndex)).Value);
+                values_to_send.Add(getStr(tmp, "%"));
 
                 //DIMM[0] Temperature
                 values_to_send.Add(((int)((data_arr.Find(d => d.dwReadingID == settings.DIMM_0_TemperatureID && d.dwSensorIndex == settings.DIMM_0_TemperatureIndex)).Value)).ToString());
@@ -161,7 +173,8 @@ namespace HWiNFO_Transfer_to_LCD
                 //PSU Power
                 double pef = ((data_arr.Find(d => d.dwReadingID == settings.PSUPowerEfficiencyID && d.dwSensorIndex == settings.PSUPowerEfficiencyIndex)).Value / 100);
                 double pow = (data_arr.Find(d => d.dwReadingID == settings.PSUPowerID && d.dwSensorIndex == settings.PSUPowerIndex)).Value;
-                values_to_send.Add(((int)(pow / pef)).ToString());
+                tmp = (int)(pow / pef);
+                values_to_send.Add(getStr(tmp, "W"));
                 
                 //PSU Temperature
                 values_to_send.Add(((int)((data_arr.Find(d => d.dwReadingID == settings.PSUTemperatureID && d.dwSensorIndex == settings.PSUTemperatureIndex)).Value)).ToString());
@@ -175,12 +188,18 @@ namespace HWiNFO_Transfer_to_LCD
 
 
                 //Disk speeds
-                values_to_send.Add((Math.Round((data_arr.Find(d => d.dwReadingID == settings.DiskReadID && d.dwSensorIndex == settings.Disk1SpeedID)).Value, 2)).ToString().Replace(",", "."));
-                values_to_send.Add((Math.Round((data_arr.Find(d => d.dwReadingID == settings.DiskWriteID && d.dwSensorIndex == settings.Disk1SpeedID)).Value, 2)).ToString().Replace(",", "."));
-                values_to_send.Add((Math.Round((data_arr.Find(d => d.dwReadingID == settings.DiskReadID && d.dwSensorIndex == settings.Disk2SpeedID)).Value, 2)).ToString().Replace(",", "."));
-                values_to_send.Add((Math.Round((data_arr.Find(d => d.dwReadingID == settings.DiskWriteID && d.dwSensorIndex == settings.Disk2SpeedID)).Value, 2)).ToString().Replace(",", "."));
-                values_to_send.Add((Math.Round((data_arr.Find(d => d.dwReadingID == settings.DiskReadID && d.dwSensorIndex == settings.Disk3SpeedID)).Value, 2)).ToString().Replace(",", "."));
-                values_to_send.Add((Math.Round((data_arr.Find(d => d.dwReadingID == settings.DiskWriteID && d.dwSensorIndex == settings.Disk3SpeedID)).Value, 2)).ToString().Replace(",", "."));
+                tmp2 = Math.Round((data_arr.Find(d => d.dwReadingID == settings.DiskReadID && d.dwSensorIndex == settings.Disk1SpeedID)).Value, 2);
+                tmp3 = Math.Round((data_arr.Find(d => d.dwReadingID == settings.DiskWriteID && d.dwSensorIndex == settings.Disk1SpeedID)).Value, 2);
+                values_to_send.Add(getSpeed(tmp2) + " " + getSpeed(tmp3));
+
+                
+                tmp2 = Math.Round((data_arr.Find(d => d.dwReadingID == settings.DiskReadID && d.dwSensorIndex == settings.Disk2SpeedID)).Value, 2);
+                tmp3 = Math.Round((data_arr.Find(d => d.dwReadingID == settings.DiskWriteID && d.dwSensorIndex == settings.Disk2SpeedID)).Value, 2);
+                values_to_send.Add(getSpeed(tmp2) + " " + getSpeed(tmp3));
+
+                tmp2 = Math.Round((data_arr.Find(d => d.dwReadingID == settings.DiskReadID && d.dwSensorIndex == settings.Disk3SpeedID)).Value, 2);
+                tmp3 = Math.Round((data_arr.Find(d => d.dwReadingID == settings.DiskWriteID && d.dwSensorIndex == settings.Disk3SpeedID)).Value, 2);
+                values_to_send.Add(getSpeed(tmp2) + " " + getSpeed(tmp3));
 
                 resolve = string.Join(";", values_to_send.ToArray()) + "&";
                 return resolve;
@@ -190,6 +209,32 @@ namespace HWiNFO_Transfer_to_LCD
                 eventLog.WriteEntry("Cant make data string: " + ex.Message, EventLogEntryType.Error);
             }
             return "";
+        }
+
+
+        private static string getStr(int val, string end)
+        {
+            if (val < 10) return val + end + "  ";
+            else if (val < 100) return val + end + " ";
+            else return val+end;
+        }
+
+        private static string getSpeed(double speed)
+        {
+            if (speed == 0) return "  0.00";
+            else if (speed < 10) return "  " + speed.ToString().Replace(",", ".");
+            else if (speed < 100) return " " + speed.ToString().Replace(",", ".");
+            else if (speed > 999) return Math.Round(speed, 1).ToString().Replace(",", ".");
+            return speed.ToString().Replace(",", ".");
+        }
+
+        private static string getRPM(int rpm)
+        {
+            if (rpm < 10) return "   " + rpm;
+            else if (rpm < 100) return "  " + rpm;
+            else if (rpm < 1000) return " " + rpm;
+            else return "" + rpm;
+
         }
 
 
