@@ -164,9 +164,10 @@ namespace HWiNFO_Transfer_to_LCD
                 values_to_send.Add(getStr(tmp, "%"));
 
                 //DIMM[0] Temperature
-                values_to_send.Add(((int)((data_arr.Find(d => d.dwReadingID == settings.DIMM_0_TemperatureID && d.dwSensorIndex == settings.DIMM_0_TemperatureIndex)).Value)).ToString());
-                //DIMM[2] Temperature
-                values_to_send.Add(((int)((data_arr.Find(d => d.dwReadingID == settings.DIMM_2_TemperatureID && d.dwSensorIndex == settings.DIMM_2_TemperatureIndex)).Value)).ToString());
+                int temp = (int)((data_arr.Find(d => d.dwReadingID == settings.DIMM_0_TemperatureID && d.dwSensorIndex == settings.DIMM_0_TemperatureIndex)).Value);
+                int temp2 = (int)((data_arr.Find(d => d.dwReadingID == settings.DIMM_2_TemperatureID && d.dwSensorIndex == settings.DIMM_2_TemperatureIndex)).Value);
+
+                values_to_send.Add(Math.Max(temp, temp2).ToString());
 
 
 
@@ -201,6 +202,14 @@ namespace HWiNFO_Transfer_to_LCD
                 tmp3 = Math.Round((data_arr.Find(d => d.dwReadingID == settings.DiskWriteID && d.dwSensorIndex == settings.Disk3SpeedID)).Value, 2);
                 values_to_send.Add(getSpeed(tmp2) + " " + getSpeed(tmp3));
 
+                //network
+                tmp2 = Math.Round((data_arr.Find(d => d.dwReadingID == settings.NetDownloadID && d.dwSensorIndex == settings.NetSpeedIndex)).Value, 2);
+                values_to_send.Add(getNetSpeed(tmp2, true));
+
+                tmp2 = Math.Round((data_arr.Find(d => d.dwReadingID == settings.NetUploadID && d.dwSensorIndex == settings.NetSpeedIndex)).Value, 2);
+                values_to_send.Add(getNetSpeed(tmp2, false));
+
+
                 resolve = string.Join(";", values_to_send.ToArray()) + "&";
                 return resolve;
             } 
@@ -226,6 +235,15 @@ namespace HWiNFO_Transfer_to_LCD
             else if (speed < 100) return " " + speed.ToString("N2").Replace(",", ".");
             else if (speed > 999) return Math.Round(speed, 1).ToString("N2").Replace(",", ".");
             return speed.ToString("N2").Replace(",", ".");
+        }
+
+        private static string getNetSpeed(double speed, bool down)
+        {
+            if (speed < 10) return (down ? "DL:" : "UP:") + speed.ToString("N2").Replace(",", ".") + " KB/s";
+            else if (speed < 99.5) return (down ? "DL:" : "UP:") + speed.ToString("0.0").Replace(",", ".") + " KB/s";
+            else if (speed < 10000) return (down ? "DL:" : "UP:") + Math.Round((speed / 1024), 2).ToString("0.00").Replace(",", ".") + " MB/s";
+            else if (speed >= 10000) return (down ? "DL:" : "UP:") + Math.Round((speed / 1024), 1).ToString("0.0").Replace(",", ".") + " MB/s";
+            return (down ? "DL:" : "UP:") + ((int)Math.Round((speed / 1024), 0)).ToString().Replace(",", ".") + " MB/s";
         }
 
         private static string getRPM(int rpm)

@@ -61,18 +61,6 @@ namespace HWiNFO_Transfer_to_LCD.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("COM5")]
-        public string SerialPortName {
-            get {
-                return ((string)(this["SerialPortName"]));
-            }
-            set {
-                this["SerialPortName"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("9600")]
         public int SerialPortSpeed {
             get {
@@ -500,6 +488,54 @@ namespace HWiNFO_Transfer_to_LCD.Properties {
             }
             set {
                 this["Disk3SpeedID"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("COM7")]
+        public string SerialPortName {
+            get {
+                return ((string)(this["SerialPortName"]));
+            }
+            set {
+                this["SerialPortName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("22")]
+        public uint NetSpeedIndex {
+            get {
+                return ((uint)(this["NetSpeedIndex"]));
+            }
+            set {
+                this["NetSpeedIndex"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("134217730")]
+        public uint NetDownloadID {
+            get {
+                return ((uint)(this["NetDownloadID"]));
+            }
+            set {
+                this["NetDownloadID"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("134217731")]
+        public uint NetUploadID {
+            get {
+                return ((uint)(this["NetUploadID"]));
+            }
+            set {
+                this["NetUploadID"] = value;
             }
         }
     }

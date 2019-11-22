@@ -11,9 +11,6 @@
     <Setting Name="SysLogName" Type="System.String" Scope="User">
       <Value Profile="(Default)">HWiNFO Transfer</Value>
     </Setting>
-    <Setting Name="SerialPortName" Type="System.String" Scope="User">
-      <Value Profile="(Default)">COM5</Value>
-    </Setting>
     <Setting Name="SerialPortSpeed" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">9600</Value>
     </Setting>
@@ -121,6 +118,18 @@
     </Setting>
     <Setting Name="Disk3SpeedID" Type="System.UInt32" Scope="User">
       <Value Profile="(Default)">18</Value>
+    </Setting>
+    <Setting Name="SerialPortName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">COM7</Value>
+    </Setting>
+    <Setting Name="NetSpeedIndex" Type="System.UInt32" Scope="User">
+      <Value Profile="(Default)">22</Value>
+    </Setting>
+    <Setting Name="NetDownloadID" Type="System.UInt32" Scope="User">
+      <Value Profile="(Default)">134217730</Value>
+    </Setting>
+    <Setting Name="NetUploadID" Type="System.UInt32" Scope="User">
+      <Value Profile="(Default)">134217731</Value>
     </Setting>
   </Settings>
 </SettingsFile>
