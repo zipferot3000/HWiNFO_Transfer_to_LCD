@@ -222,10 +222,10 @@ namespace HWiNFO_Transfer_to_LCD
         private static string getSpeed(double speed)
         {
             if (speed == 0) return "  0.00";
-            else if (speed < 10) return "  " + speed.ToString().Replace(",", ".");
-            else if (speed < 100) return " " + speed.ToString().Replace(",", ".");
-            else if (speed > 999) return Math.Round(speed, 1).ToString().Replace(",", ".");
-            return speed.ToString().Replace(",", ".");
+            else if (speed < 10) return "  " + speed.ToString("N2").Replace(",", ".");
+            else if (speed < 100) return " " + speed.ToString("N2").Replace(",", ".");
+            else if (speed > 999) return Math.Round(speed, 1).ToString("N2").Replace(",", ".");
+            return speed.ToString("N2").Replace(",", ".");
         }
 
         private static string getRPM(int rpm)
